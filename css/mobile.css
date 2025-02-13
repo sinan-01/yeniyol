@@ -1,0 +1,175 @@
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .slider-container {
+        height: 400px;
+    }
+
+    .card-container {
+        justify-content: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .card {
+        max-width: 250px;
+        height: 180px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 32, 82, 0.95);
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .slider-container {
+        height: 300px;
+        margin-top: 60px;
+    }
+
+    .slide-content {
+        padding: 15px;
+    }
+
+    .slide-content h2 {
+        font-size: 20px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 280px;
+        height: 160px;
+        margin-bottom: 15px;
+    }
+
+    .search-container {
+        margin-right: 200px;
+    }
+
+    .search-box {
+        width: 120px;
+    }
+
+    .prev-btn, .next-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .navigation {
+        bottom: 10px;
+    }
+
+    .nav-btn {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .slider-container {
+        height: 250px
+    }
+}
+@media (max-width: 768px) {
+    .sec_new_h2 {
+        font-size: 22px; /* Küçük ekranlarda biraz küçült */
+    }
+}
+/* footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        margin: 5px 0;
+    }
+
+    .social-media {
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .footer-note {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section p, .footer-note p {
+        font-size: 0.9em;
+    }
+
+    .social-link img {
+        width: 28px;
+        height: 28px;
+    }
+}
+/* book-cards */
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .books-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .books-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .books-container {
+        grid-template-columns: 1fr;
+    }
+}

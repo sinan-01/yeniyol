@@ -1,0 +1,550 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(33, 66, 128, 0.8);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 32, 82, 0.8);
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+.logo:hover{
+    color: #ffb422;
+}
+
+.nav_a {
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffb422;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ffb422;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Slider Styles */
+.slider-container {
+    width: 100%;
+    max-width: 1920px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    margin: 80px auto 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.nav-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn.active {
+    background: white;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+/* ara kisim */
+.sec_new {
+    text-align: center; /* Başlığı ortala */
+    margin: 50px 0; /* Üstten ve alttan biraz boşluk bırak */
+}
+
+.sec_new_h2 {
+    font-size: 28px; /* Biraz büyük ve belirgin olsun */
+    font-weight: bold; /* Kalın yap */
+    color: #ffb422; /* Yazı rengini beyaz yaptım, arka plana göre değişebilir */
+    text-transform: uppercase; /* Büyük harf olsun */
+    letter-spacing: 2px; /* Harfler arasında biraz boşluk olsun */
+}
+
+
+/* Cards Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 100px;
+    padding: 0 50px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex: 1;
+    max-width: 300px;
+    text-decoration: none;
+}
+
+.card svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.card image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+/* search */
+.search-container {
+    position: relative;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+    color: white;
+}
+.search-icon :hover{
+    color: #ffb422;
+}
+
+.search-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.search-box {
+    position: absolute;
+    left: 20px; /* Sabit başlangıç noktası */
+    padding: 8px 12px;
+    padding-left: 30px;
+    width: 0; /* Başlangıçta gizli */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 13px;
+    transition: width 0.3s ease, opacity 0.3s ease, left 0.3s ease;
+    opacity: 0;
+    overflow: hidden; /* İçeriğin kaymasını önler */
+}
+
+.search-box.active {
+    width: 130px; /* Açılınca genişlesin */
+    left: -150px; /* Genişlerken sola doğru kay */
+    opacity: 1;
+}
+
+
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+/* scrool booton */
+#scrollToTopBtn {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(33, 66, 128, 0.8); /* Footer rengiyle uyumlu */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgb(247, 244, 244);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #ffb422; /* Hover rengi */
+    transform: scale(1.1); /* Butonu biraz büyüt */
+}
+/* Book cards container */
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    padding: 20px;
+    overflow: hidden; /* Ekledik */
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+    position: relative; /* Ekledik */
+    z-index: 0; /* Değiştirdik */
+}
+
+.book-author {
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: center;
+    position: relative; /* Ekledik */
+    z-index: 0; /* Değiştirdik */
+}
+
+.cover {
+    top: 0;
+    left: 0; /* Ekledik */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    overflow: hidden;
+    z-index: 1; /* Ekledik */
+    background-color: white; /* Ekledik */
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+}
+/* footer */
+/* Footer Temel Stilleri */
+footer {
+    background-color: rgba(33, 66, 128, 0.8);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+     margin-top: 30px;
+}
+
+/* Blur Efekti için Arka Plan */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 32, 82, 0.8);
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Footer İçeriğini Düzenleme */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 5px;
+    min-width: 200px;
+}
+.footer-section-p{
+    font: size small;;
+}
+.footer-section-p-p{
+    font-size: x-small;
+}
+
+/* Sosyal Medya İkonları */
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link img {
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Sosyal Medya Hover Efektleri */
+.social-link:hover img {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+.social-link[href*="instagram"]:hover img {
+    filter: hue-rotate(90deg) brightness(1.2); /* Kırmızımsı Efekt */
+  
+}
+
+.social-link[href*="facebook"]:hover img {
+    filter: hue-rotate(220deg) brightness(1.2); /* Mavi Efekt */
+}
+
+.social-link[href*="tiktok"]:hover img {
+    filter: grayscale(100%) brightness(1.2); /* Siyahımsı Efekt */
+}
+
+/* Qeyd Metni Stilleri */
+.footer-note {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Metinler için Hover Efekti */
+.footer-section p, .footer-note p {
+    transition: color 0.3s ease;
+}
+
+.footer-section p:hover, .footer-note p:hover {
+    color: #ffb422; /* Hover ile metin rengi değişimi */
+}
+/* footer sabitlendi */
+/* Body stilini güncelle */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Content div'ini güncelle */
+.content {
+    flex: 1;
+    margin-bottom: 30px; /* Footer ile içerik arasında boşluk */
+}
+
+/* Footer stilini güncelle */
+footer {
+    background-color: rgba(33, 66, 128, 0.8);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* Footer'ı en alta iter */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
